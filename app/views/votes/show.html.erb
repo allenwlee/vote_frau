@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_for :votes do |f| %>
+<%= f.type %>
+<%= f.person %>
+<%= f.quantity %>
+<%= f.submit 'Go', class: 'btn btn-success' %>
+<% end %>
+
+
+<%= link_to 'Edit', edit_vote_path(@vote) %> |
+<%= link_to 'Back', votes_path %>
