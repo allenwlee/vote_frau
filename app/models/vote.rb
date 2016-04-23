@@ -1,4 +1,6 @@
 class Vote < ActiveRecord::Base
+  require 'net/http'
+  require 'json'
   require 'mechanize'
   require 'nokogiri'
 
