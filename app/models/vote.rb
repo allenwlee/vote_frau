@@ -46,7 +46,7 @@ class Vote < ActiveRecord::Base
   def multi_post thread, per_thread
     i = 0
     while i <= per_thread
-      puts "thread: #{thread}, per_thread: #{per_thread}"
+      puts "thread: #{thread}, per_thread: #{i}"
       post_uri
       i += 1
     end 
