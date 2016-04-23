@@ -52,5 +52,3 @@ gem 'selenium-webdriver'
 gem 'devise'
 
 gem 'figaro'
-
-gem 'httparty'

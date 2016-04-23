@@ -1,5 +1,4 @@
 class Vote < ActiveRecord::Base
-  require 'httparty'
   require 'uri'
   require 'net/http'
   require 'json'
@@ -60,10 +59,19 @@ class Vote < ActiveRecord::Base
     res = Net::HTTP.start(uri.hostname, uri.port) do |http|
       http.request(req)
     end
-    response = Nokogiri::HTML(res.body).text
-    puts response.partition("score").last
-
+    puts res.body
   end
+
+  def post_test
+    uri = URI('http://www.gq-magazin.de/ezjscore/call/')
+    req = Net::HTTP::Post.new(uri, initheader = {'Content-Type' =>'application/json', 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:45.0) Gecko/20100101 Firefox/45.0'})
+    req.set_form_data('participant_id' => '254296', 'type' => 'hot', 'ezjscServer_function_arguments' => 'cntoplist::addVote')
+    res = Net::HTTP.start(uri.hostname, uri.port) do |http|
+      http.request(req)
+    end
+    puts res.body
+  end
+
 
   def func1 num
     i=0

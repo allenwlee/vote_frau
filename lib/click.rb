@@ -1,5 +1,6 @@
 require 'uri'
 require 'net-http'
+
 def post_uri
   uri = URI('http://www.gq-magazin.de/ezjscore/call/')
   req = Net::HTTP::Post.new(uri, initheader = {'Content-Type' =>'application/json', 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:45.0) Gecko/20100101 Firefox/45.0'})
