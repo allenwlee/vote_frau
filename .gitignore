@@ -16,5 +16,6 @@
 !/log/.keep
 /tmp
 /lib/scratch_paper.rb
+/lib/janina_up_post.data
 # Ignore application configuration
 /config/application.yml
