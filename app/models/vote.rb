@@ -49,9 +49,8 @@ class Vote < ActiveRecord::Base
     res = Net::HTTP.start(uri.hostname, uri.port) do |http|
       http.request(req)
     end
-    puts Nokogiri::HTML(res.body).text.partition('score')
+    puts Nokogiri::HTML(res.body).text.partition('score').last
   end
-
   
 
 end
